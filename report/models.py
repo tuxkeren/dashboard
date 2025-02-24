@@ -2,6 +2,7 @@ from django.db import models
 
 class Machine(models.Model):
     name = models.CharField(max_length=100)
+    task = models.CharField(max_length=100)
     note = models.TextField()
 
     def __str__(self):
