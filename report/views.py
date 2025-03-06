@@ -26,3 +26,8 @@ def list_machine(request):
    
     return render(request, 'machine_list.html', context)
 
+def paramater(request):
+    context = {
+        'title':'Parameter'
+    }
+    return render(request, 'parameter.html', context)

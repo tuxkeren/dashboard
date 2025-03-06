@@ -7,3 +7,6 @@ class MachineAdmin(admin.ModelAdmin):
 
 admin.site.register(Machine, MachineAdmin)
 
+admin.site.register(Report)
+
+admin.site.register(Fixvar)
