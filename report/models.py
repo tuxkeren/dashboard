@@ -1,3 +1,4 @@
+from django.utils import timezone
 from django.db import models
 
 class Machine(models.Model):
@@ -13,6 +14,7 @@ class Machine(models.Model):
         return self.name
 
 class Report(models.Model):
+    date    = models.DateField(default=timezone.now, null=True, blank=True)
     param_1 = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     param_2 = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     param_3 = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
@@ -28,9 +30,9 @@ class Report(models.Model):
     
 
 class Fixvar(models.Model):
-    param_1 = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
-    param_2 = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
-    param_3 = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
-    param_4 = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
-    param_5 = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    rate_threading  = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    rate_welding    = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    param_3         = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    param_4         = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    param_5         = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
 
