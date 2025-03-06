@@ -3,14 +3,26 @@ from django.shortcuts import render
 from .models import *
 
 def index(request):
-    return render(request, 'dashboard.html')
+    context = {
+        'title':'Dashboard'
+    }
+    return render(request, 'dashboard.html', context)
 
 
 def entry_data(request):
-    return render(request, 'entry_data.html')
+    context = {
+        'title':'Entry Data'
+    }
+    return render(request, 'entry_data.html', context)
 
 
 def list_machine(request):
-    machines = Machine.objects.all()
-    return render(request, 'machine_list.html', {'machines': machines})
+    machine = Machine.objects.all()
+
+    context = {
+        'title':'Daftar Mesin',
+        'machines': machine
+    }
+   
+    return render(request, 'machine_list.html', context)
 
